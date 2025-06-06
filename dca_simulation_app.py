@@ -38,7 +38,7 @@ st.sidebar.header("Paramètres de la simulation")
 capital_initial = st.sidebar.number_input("💰 Capital initial (€)", min_value=0, value=10000, step=500)
 investissement_mensuel = st.sidebar.number_input("💸 Apport mensuel (€)", min_value=0, value=500, step=50)
 nb_annees = st.sidebar.slider("⏳ Durée de l'investissement (années)", min_value=1, max_value=50, value=20)
-proba_defaut_epargne = st.sidebar.slider("🎲 Taux de défaut d’épargne (%)", min_value=0.0, max_value=20.0, value=1.0) / 100
+proba_defaut_epargne = st.sidebar.slider("🎲 Taux de défaut d’épargne (% de mois où tu n'arrives pas à épargner", min_value=0.0, max_value=20.0, value=1.0) / 100
 nb_simulations = st.sidebar.slider("🔁 Nombre de simulations", min_value=1, max_value=5000, value=10)
 
 mu_annual = st.sidebar.slider("📈 CAGR estimé (%)", min_value=0.0, max_value=20.0, value=9.11) / 100
@@ -60,6 +60,7 @@ if st.button("Lancer la simulation 🚀"):
     plt.title(f"Simulation DCA ({nb_simulations} runs) - Capital: {capital_initial}€, Apport: {investissement_mensuel}€, Défaut: {proba_defaut_epargne:.1%}, CAGR: {mu_annual:.2%}, Vol: {sigma_annual:.2%}")
     plt.xlabel("Années")
     plt.ylabel("Valeur du portefeuille (€)")
+    plt.ticklabel_format(style='plain', axis='y')
     plt.grid(True)
     plt.legend()
     st.pyplot(plt.gcf())
