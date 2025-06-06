@@ -44,8 +44,16 @@ nb_simulations = st.sidebar.slider("🔁 Nombre de simulations", min_value=1, ma
 mu_annual = st.sidebar.slider("📈 CAGR estimé (%)", min_value=0.0, max_value=20.0, value=9.11) / 100
 sigma_annual = st.sidebar.slider("📉 Volatilité annualisée (%)", min_value=5.0, max_value=40.0, value=17.09) / 100
 
+# Ajout de la case à cocher "Vous attendez un enfant ?"
+vous_attendez_un_enfant = st.sidebar.checkbox("👶 Vous attendez un enfant ?")
+
+# Ajustement de l'investissement mensuel (peut devenir négatif)
+investissement_mensuel_net = investissement_mensuel
+if vous_attendez_un_enfant:
+    investissement_mensuel_net = investissement_mensuel - 1000
+
 if st.button("Lancer la simulation 🚀"):
-    simulations = simulate_dca(capital_initial, investissement_mensuel, nb_annees, proba_defaut_epargne, nb_simulations, mu_annual, sigma_annual)
+    simulations = simulate_dca(capital_initial, investissement_mensuel_net, nb_annees, proba_defaut_epargne, nb_simulations, mu_annual, sigma_annual)
 
     nb_mois = nb_annees * 12
     x = np.arange(nb_mois + 1) / 12  # Convertit les mois en années
