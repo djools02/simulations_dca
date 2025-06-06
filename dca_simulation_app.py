@@ -20,7 +20,7 @@ def simulate_dca(capital_initial, investissement_mensuel, nb_annees, proba_defau
     return simulations
 
 # Interface Streamlit
-st.title("📊 Simulation réaliste de DCA en ETF (modèle GBM)")
+st.title("📊 Simulation réaliste de DCA en ETF (modèle GBM) @Zonebourse")
 
 st.markdown("""
 Bienvenue sur ce simulateur de DCA en ETF utilisant un modèle à volatilité réaliste (Geometric Brownian Motion).
@@ -38,7 +38,7 @@ st.sidebar.header("Paramètres de la simulation")
 capital_initial = st.sidebar.number_input("💰 Capital initial (€)", min_value=0, value=10000, step=500)
 investissement_mensuel = st.sidebar.number_input("💸 Apport mensuel (€)", min_value=0, value=500, step=50)
 nb_annees = st.sidebar.slider("⏳ Durée de l'investissement (années)", min_value=1, max_value=50, value=20)
-proba_defaut_epargne = st.sidebar.slider("🎲 Taux de défaut d’épargne (% de mois où tu n'arrives pas à épargner", min_value=0.0, max_value=20.0, value=1.0) / 100
+proba_defaut_epargne = st.sidebar.slider("🎲 Taux de défaut d’épargne (% de mois où tu n'arrives pas à épargner)", min_value=0.0, max_value=20.0, value=1.0) / 100
 nb_simulations = st.sidebar.slider("🔁 Nombre de simulations", min_value=1, max_value=5000, value=10)
 
 mu_annual = st.sidebar.slider("📈 CAGR estimé (%)", min_value=0.0, max_value=20.0, value=9.11) / 100
