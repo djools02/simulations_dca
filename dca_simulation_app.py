@@ -3,6 +3,15 @@ import numpy as np
 import plotly.graph_objects as go
 
 st.image("prez_bourse_finance.png", width=1500)
+st.markdown(
+    """
+    <a href="https://www.zonebourse.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/EtienneNeptune/simulations_dca/main/prez_bourse_finance.png
+" width="1500">
+    </a>
+    """,
+    unsafe_allow_html=True
+)
 
 # Fonction de simulation DCA avec GBM
 def simulate_dca(capital_initial, investissement_mensuel, nb_annees, proba_defaut_epargne, nb_simulations, mu_annual, sigma_annual):
