@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 
 st.markdown(
     """
-    <a href="https://www.zonebourse.com" target="_blank">
+    <a href="https://www.zonebourse.com/wbfl/livre" target="_blank">
         <img src="https://raw.githubusercontent.com/EtienneNeptune/simulations_dca/main/prez_bourse_finance.png
 " width="1500">
     </a>
