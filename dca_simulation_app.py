@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
 
-st.image("prez_bourse_finance.png", width=1500)
 st.markdown(
     """
     <a href="https://www.zonebourse.com" target="_blank">
