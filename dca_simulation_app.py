@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
 
+st.image("pub_livre.png", width=1500)
+
 # Fonction de simulation DCA avec GBM
 def simulate_dca(capital_initial, investissement_mensuel, nb_annees, proba_defaut_epargne, nb_simulations, mu_annual, sigma_annual):
     nb_mois = nb_annees * 12
@@ -20,7 +22,7 @@ def simulate_dca(capital_initial, investissement_mensuel, nb_annees, proba_defau
     return simulations
 
 # Interface Streamlit
-st.title("📊 Simulation réaliste de DCA en ETF (modèle GBM) @Zonebourse")
+st.title("📊 Simulation réaliste de DCA en ETF (modèle GBM)")
 
 st.markdown("""
 Bienvenue sur ce simulateur de DCA en ETF utilisant un modèle à volatilité réaliste (Geometric Brownian Motion).
